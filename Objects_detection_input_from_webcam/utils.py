@@ -86,10 +86,10 @@ class_names = [
 
 # Create a list of colors for each class where each color is a tuple of 3 integer values
 rng = np.random.default_rng(3)   # 随机数生成器，种为3，保证每次生成的随机数相同
-“”“
+"""
 0,255表示生成 0~255 之间的随机数,表示不同的颜色值
 生成形状为(size=(len(class_names), 3)的数组，size表示obj的类别，3表示RGB颜色的三个分量
-”“”
+"""
 colors = rng.uniform(0, 255, size=(len(class_names), 3))   # 随机生成size种颜色（对应不同的类别）
 
 
@@ -165,9 +165,9 @@ def xywh2xyxy(x):
 def draw_detections(image, boxes, scores, class_ids, mask_alpha=0.3):
     det_img = image.copy()
 
-    img_height, img_width = image.shape[:2]
-    font_size = min([img_height, img_width]) * 0.0006
-    text_thickness = int(min([img_height, img_width]) * 0.001)
+    img_height, img_width = image.shape[:2]  # image的形状为(w,h,c) 即宽高和通道数（RGB）
+    font_size = min([img_height, img_width]) * 0.0006  # 文本大小
+    text_thickness = int(min([img_height, img_width]) * 0.001)  # 字体粗细
 
     #det_img = draw_masks(det_img, boxes, class_ids, mask_alpha)
 
@@ -185,12 +185,12 @@ def draw_detections(image, boxes, scores, class_ids, mask_alpha=0.3):
 
 
 def draw_box(
-    image: np.ndarray,
+    image: np.ndarray,  # 图像为Numpy数组
     box: np.ndarray,
-    color: tuple[int, int, int] = (0, 0, 255),
-    thickness: int = 2,
+    color: tuple[int, int, int] = (0, 0, 255),  # 红色
+    thickness: int = 2,  # 线条粗细程度
 ) -> np.ndarray:
-    x1, y1, x2, y2 = box.astype(int)
+    x1, y1, x2, y2 = box.astype(int)  # 坐标类型为整数型
     return cv2.rectangle(image, (x1, y1), (x2, y2), color, thickness)
 
 
@@ -211,8 +211,9 @@ def draw_text(
     )
     th = int(th * 1.2)
 
-    cv2.rectangle(image, (x1, y1), (x1 + tw, y1 - th), color, -1)
-
+    cv2.rectangle(image, (x1, y1), (x1 + tw, y1 - th), color, -1)  # -1表示用矩形填充图像
+    
+    # 绘制文本
     return cv2.putText(
         image,
         text,
@@ -221,7 +222,7 @@ def draw_text(
         font_size,
         (255, 255, 255),
         text_thickness,
-        cv2.LINE_AA,
+        cv2.LINE_AA,  # 抗锯齿线条类型
     )
 
 
@@ -239,4 +240,5 @@ def draw_masks(
         # Draw fill rectangle in mask image
         cv2.rectangle(mask_img, (x1, y1), (x2, y2), color, -1)
 
-    return cv2.addWeighted(mask_img, mask_alpha, image, 1 - mask_alpha, 0)
+    # 返回原始图像和掩码图像的加权混合(掩码图像，掩码图像权重，原始图像，原始图像权重，加权混合后图像的亮度偏移量)
+    return cv2.addWeighted(mask_img, mask_alpha, image, 1 - mask_alpha, 0)  
