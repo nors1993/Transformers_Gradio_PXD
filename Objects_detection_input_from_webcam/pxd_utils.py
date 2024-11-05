@@ -1,6 +1,7 @@
 import numpy as np
 import cv2
 
+# COCO数据集
 class_names = [
     "person",
     "bicycle",
@@ -85,7 +86,7 @@ class_names = [
 ]
 
 # 随机数生成器，种子为5，保证每次生产的随机数相同
-rng = np.random.default_rng(5)
+rng = np.random.default_rng(10)
 """
 0,255表示生成 0~255 之间的随机数,表示不同的颜色值
 生成形状为(size=(len(class_names), 3)的数组,size表示obj的类别,3表示RGB颜色的三个分量

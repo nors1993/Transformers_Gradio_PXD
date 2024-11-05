@@ -1,7 +1,7 @@
 import time
 import cv2
 import numpy as np
-import onnxruntime   
+import onnxruntime 
 # 跨onnxruntime 是一个高性能的推理引擎，用于运行 ONNX（Open Neural Network Exchange）模型。ONNX 是一个开放的深度学习模型格式，允许不同的深度学习框架（如 PyTorch、TensorFlow 等）之间进行互操作，使得模型可以在不同的环境中运行。
 
 from pxd_utils import draw_detections
