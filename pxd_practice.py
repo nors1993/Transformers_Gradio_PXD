@@ -1,3 +1,3 @@
-from transformers import pipeline
+from huggingface_hub import login
 
-classifier = pipeline("sentiment-analysis")
+login("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")
