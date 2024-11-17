@@ -13,7 +13,6 @@ PyAudio==0.2.14
 pydub==0.25.1
 onnxruntime==1.19.0
 numpy==1.26.3
-https://gradio-builds.s3.amazonaws.com/cffe9a7ab7f71e76d7214dc57c6278ffaf5bcdf9/gradio-5.0.0b1-py3-none-any.whl
 fastapi==0.112.4
 librosa==0.10.2.post1
 flask==3.0.3
