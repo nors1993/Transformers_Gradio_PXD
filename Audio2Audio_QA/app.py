@@ -12,7 +12,8 @@ from dataclasses import dataclass, field
 import io
 from pydub import AudioSegment
 import librosa
-from utils.vad import get_speech_timestamps, collect_chunks, VadOptions
+# 防止命名冲突报错，不使用utils，在这我随意命名为utils_pxd
+from utils.vad import get_speech_timestamps, collect_chunks,VadOptions
 import tempfile
 
 
