@@ -1,0 +1,2 @@
+dashscope
+modelscope_studio>=0.5.0
