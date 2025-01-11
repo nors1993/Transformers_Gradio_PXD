@@ -1,0 +1,3 @@
+instruction,id,conversations,lang
+"",industry-instruction-edu,"[{""from"":""human"",""value"":""1111""},{""from"":""gpt"",""value"":""2222""},{""from"":""human"",""value"":""3333""},{""from"":""gpt"",""value"":""4444""}]",zh
+"",industry-instruction-edu,"[{""from"":""human"",""value"":""6666""},{""from"":""gpt"",""value"":""7777 \n\n""},{""from"":""human"",""value"":""8888""},{""from"":""gpt"",""value"":""9999""}]",zh
