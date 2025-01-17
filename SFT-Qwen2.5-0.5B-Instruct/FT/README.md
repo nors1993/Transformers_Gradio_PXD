@@ -1,3 +1,4 @@
+![alt text](image.png)
 一、硬件配置：
 **CPU:Intel Core i9-14900HX  24 cores**
 **GPU:RTX 4070 Laptop 8GB**
@@ -45,6 +46,8 @@ FT_infer_full.py：如果微调方式为full，参考此推理代码进行推理
 
 
 其他推理方式，请参考qwen2.5的详细说明
+
+
 
 
 
